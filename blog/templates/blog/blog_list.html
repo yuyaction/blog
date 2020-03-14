@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  Yuyaction's Blog
+{% endblock %}
+
+{% block content1 %}
+{% endblock %}
+
+{% block content2 %}
+  <h3>投稿された記事一覧</h3>
+  {% for article in articles %}
+    <p>
+    <h4>
+      <a href="{% url 'blog:post_content' article.pk %}">
+        {{ article.title }}
+      </a>
+    </h4>
+    {{ article.time}}
+    {% for tag in article.tags.all %}
+      {{ tag.name }}
+    {% endfor %}
+    </p>
+  {% endfor %}
+{% endblock %}
+
+

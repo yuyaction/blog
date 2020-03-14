@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  Yuyaction's Blog
+{% endblock %}
+
+{% block content1 %}
+  <div class="py-5 sticky-top">
+    <br class="visible-md">
+    {{ post.table_of_contents|safe }}
+  </div>
+{% endblock %}
+
+{% block content2 %}
+  <h1>{{ post.title }}</h1>
+  <!-- post モデルに設定した関数 -->
+  {{ post.formatted_markdown|safe }}
+{% endblock %}
+
