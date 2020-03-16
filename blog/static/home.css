@@ -33,4 +33,7 @@
   border-color: #c9753d;
 }
 
+#sticky-footer {
+  flex-shrink: none;
+}
 

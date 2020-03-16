@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Post, Tag
+from .models import Home, Post, Tag
 # Create your views here.
 
 def post_content(request, post_id):
@@ -16,7 +16,8 @@ def tag_list(request):
     return render(request, 'blog/tag_list.html', context)
 
 def home(request):
-    return render(request, 'blog/home.html')
+    context = {"home":Home.objects.get(pk=1)}
+    return render(request, 'blog/home.html', context)
 
 def article_with_tag(request,tag_name):
     t = Tag.objects.get(name=tag_name)

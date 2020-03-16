@@ -4,7 +4,7 @@ from markdownx.admin import MarkdownxModelAdmin
 from markdownx.widgets import AdminMarkdownxWidget
 from markdownx.models import MarkdownxField
 #自作モデル
-from .models import Post, Tag
+from .models import Home, Post, Tag
 # Register your models here.
 
 # Preview of Markdown to HTML
@@ -21,6 +21,12 @@ class PostAdmin(admin.ModelAdmin):
             kwargs["queryset"] = Tag.objects.order_by('name')
         return super().formfield_for_manytomany(db_field, request, **kwargs)
 
+class HomeAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        MarkdownxField: {'widget': AdminMarkdownxWidget}
+    }
+
+admin.site.register(Home,HomeAdmin)
 admin.site.register(Tag)
 admin.site.register(Post,PostAdmin)
 

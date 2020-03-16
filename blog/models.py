@@ -8,6 +8,12 @@ from django.utils import timezone
 from markdownx.utils import markdownify
 # Create your models here.
 
+class Home(models.Model):
+    contents = MarkdownxField('Contents', help_text='To Write with Markdown format')
+    
+    def formatted_markdown(self):
+        return markdownify(self.contents)
+
 class Tag(models.Model):
     name = models.CharField(unique=True, max_length=64)
 
