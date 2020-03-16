@@ -8,10 +8,19 @@
 {% endblock %}
 
 {% block content2 %}
+  <h3>タグ {{ selected_tag.name }} に関する記事</h3>
   {% for article in awt %}
+    <p>
+    <h4>
     <a href="{% url 'blog:post_content' article.pk %}">
     {{ article.title}}
     </a>
+    </h4>
+    </p>
+    <p>
+    投稿日時:
+    {{ article.time }}
+    </p>
   {% endfor %}
 {% endblock %}
 

@@ -10,13 +10,11 @@
 {% block content2 %}
   <h3>タグ一覧</h3>
   {% for tag in tags %}
-    <p>
-    <h4>
-      <a href="{% url 'blog:awt' tag.name %}">
+      <button type="button" class="btn btn-sm btn-secondary rounded-pill">
+      <a href="{% url 'blog:awt' tag.name %}" class="text-light">
         {{ tag.name }}
       </a>
-    </h4>
-    </p>
+      </button>
   {% endfor %}
   <p>
   </p>

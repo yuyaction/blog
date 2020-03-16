@@ -26,6 +26,6 @@ def home(request):
 
 def article_with_tag(request,tag_name):
     t = Tag.objects.get(name=tag_name)
-    context ={"awt":Post.objects.filter(tags=t)}
+    context ={"awt":Post.objects.filter(tags=t), "selected_tag":t}
     return render(request, 'blog/awt.html', context)
 

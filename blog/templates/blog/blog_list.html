@@ -19,14 +19,13 @@
     <p>
     投稿日時:
     {{ article.time }}
-    <button type="button" class="btn btn-sm btn-secondary rounded-pill">
     {% for tag in article.tags.all %}
+    <button type="button" class="btn btn-sm btn-secondary rounded-pill">
+      <a href="{% url 'blog:awt' tag.name %}" class="text-light">
       {{ tag.name }}
-    {% endfor %}
+      </a>
     </button>
-    </p>
-
-    </p>
+    {% endfor %}
   {% endfor %}
 {% endblock %}
 

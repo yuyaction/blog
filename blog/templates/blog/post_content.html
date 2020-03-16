@@ -13,7 +13,18 @@
 
 {% block content2 %}
   <h1>{{ post.title }}</h1>
-  <!-- post モデルに設定した関数 -->
+  <p class="text-secondary">
+    投稿日時: {{ post.time }}
+  </p>
+  <p>
+    {% for tag in post.tags.all %}
+    <button type="button" class="btn btn-sm btn-secondary rounded-pill">
+      <a href="{% url 'blog:awt' tag.name %}" class="text-light">
+      {{ tag.name }}
+      </a>
+    </button>
+    {% endfor %}
+  </p>
   {{ post.formatted_markdown|safe }}
 {% endblock %}
 
