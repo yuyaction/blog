@@ -4,17 +4,11 @@ from .models import Post, Tag
 # Create your views here.
 
 def post_content(request, post_id):
-
-    post = Post.objects.get(pk=post_id)
-    
-    return render(request,
-                  'blog/post_content.html',
-                  {
-                      'post': post,
-                  })
+    context = {"post":Post.objects.get(pk=post_id)}
+    return render(request, 'blog/post_content.html', context)
 
 def blog_list(request):
-    context = {"articles":Post.objects.all()}
+    context = {"articles":Post.objects.filter(publish=True).order_by('-published_time')}
     return render(request, 'blog/blog_list.html', context)
 
 def tag_list(request):

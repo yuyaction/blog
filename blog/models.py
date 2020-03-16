@@ -17,8 +17,10 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     contents = MarkdownxField('Contents', help_text='To Write with Markdown format')
-    time = models.DateTimeField('time' , default = timezone.now)
+    created_time = models.DateTimeField('Createded Time' , default = timezone.now)
     tags = models.ManyToManyField(Tag, related_name='posts_tags')
+    publish = models.BooleanField('flag of publication', default = False)
+    published_time =  models.DateTimeField('Pblished Time', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -34,4 +36,7 @@ class Post(models.Model):
         html = md.convert(self.contents)
         toc_blog = md.toc
         return toc_blog
-    
+    def save(self, *args, **kwargs):
+        if self.publish and not self.published_time:
+            self.published_time = timezone.now()
+        super().save(*args, **kwargs)

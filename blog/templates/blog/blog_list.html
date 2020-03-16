@@ -18,7 +18,7 @@
     </h4>
     <p>
     投稿日時:
-    {{ article.time }}
+    {{ article.published_time }}
     {% for tag in article.tags.all %}
     <button type="button" class="btn btn-sm btn-secondary rounded-pill">
       <a href="{% url 'blog:awt' tag.name %}" class="text-light">
