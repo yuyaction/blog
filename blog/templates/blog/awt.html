@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  Yuyaction's Blog
+{% endblock %}
+
+{% block content1 %}
+{% endblock %}
+
+{% block content2 %}
+  {% for article in awt %}
+    <a href="{% url 'blog:post_content' article.pk %}">
+    {{ article.title}}
+    </a>
+  {% endfor %}
+{% endblock %}
+
+

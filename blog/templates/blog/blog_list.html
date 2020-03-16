@@ -16,10 +16,16 @@
         {{ article.title }}
       </a>
     </h4>
-    {{ article.time}}
+    <p>
+    投稿日時:
+    {{ article.time }}
+    <button type="button" class="btn btn-sm btn-secondary rounded-pill">
     {% for tag in article.tags.all %}
       {{ tag.name }}
     {% endfor %}
+    </button>
+    </p>
+
     </p>
   {% endfor %}
 {% endblock %}

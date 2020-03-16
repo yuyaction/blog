@@ -34,3 +34,4 @@ class Post(models.Model):
         html = md.convert(self.contents)
         toc_blog = md.toc
         return toc_blog
+    
