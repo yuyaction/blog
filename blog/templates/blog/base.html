@@ -18,14 +18,16 @@
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script src="{% static 'tree_highlight.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     <title>
       {% block title %}{% endblock %}
     </title>
   </head>
+
   <body style = "padding-top:3.5rem">
-    <nav class = "navbar navbar-expand-md navbar-dark bg-1 fixed-top">
+    <nav class = "navbar navbar-expand-md navbar-dark bg-1 fixed-top" id = "myheader">
       <a href="{% url 'blog:home' %}" class = "navbar-brand"> Yuyaction's Blog </a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#nav1">
         <span class="navbar-toggler-icon"></span>
@@ -45,7 +47,7 @@
       </div>
     </nav>
     
-    <div class = "jumbotron jumbotron-fluid">
+    <div class = "jumbotron jumbotron-fluid" style = "margin-bottom:0rem">
       <div class = "container">
         <h1 class = "mb-3"> Yuyaction's Blog </h1>
       </div>
@@ -54,9 +56,11 @@
     <div class="container">
     <div class="row">
       <div class="col-12 col-md-4 order-md-2">
+        <div class = "col-12 sticky-top" style = "padding-top:3.5rem">
         {% block content1 %}{% endblock %}
+        </div>
       </div>
-      <div class="col-12 col-md-8 order-md-1">
+      <div class="col-12 col-md-8 order-md-1" style = "padding-top:3.5rem">
         {% block content2 %}{% endblock %}
       </div>
     </div>

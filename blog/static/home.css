@@ -33,7 +33,16 @@
   border-color: #c9753d;
 }
 
-#sticky-footer {
-  flex-shrink: none;
+html {
+  scroll-padding-top: 3.5rem; /* 固定ヘッダの高さ分 */
+}
+
+p>code{
+    margin: 0 2px;
+    padding: 0 5px;
+    /*border: 1px solid #ddd;*/
+    background-color: #F0F0F0;
+    border-radius: 2px;
+    color: #444;
 }
 

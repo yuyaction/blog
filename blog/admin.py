@@ -9,11 +9,11 @@ from .models import Home, Post, Tag
 
 # Preview of Markdown to HTML
 class PostAdmin(admin.ModelAdmin):
-    filter_horizontal = ('tags',)
-
     formfield_overrides = {
         MarkdownxField: {'widget': AdminMarkdownxWidget}
     }
+    
+    filter_horizontal = ('tags',)
 
     #タグを昇順にする
     def formfield_for_manytomany(self, db_field, request, **kwargs):
