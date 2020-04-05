@@ -1,19 +1,25 @@
 {% extends 'blog/base.html' %}
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'post_content.css' %}">
+{% endblock %}
 
 {% block title %}
   Yuyaction's Blog
 {% endblock %}
 
 {% block content1 %}
-    {{ post.table_of_contents|safe }}
+   <div class="box-title">この記事の目次</div>
+   {{ post.table_of_contents|safe }}
 {% endblock %}
 
 {% block content2 %}
   <h1>{{ post.title }}</h1>
-  <p class="text-secondary">
+  <p class="text-secondary" id="published_time">
     投稿日時: {{ post.published_time }}
   </p>
-  <p class="border-bottom pb-2 mt-n2 text-secondary">
+  <p class="border-bottom pb-2 mt-n2 text-secondary" id="tag">
     タグ:
     {% for tag in post.tags.all %}
     <button type="button" class="btn btn-sm btn-secondary rounded-pill">
