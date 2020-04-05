@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.forms',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'home.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,3 +139,6 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.toc',
     'markdown.extensions.tables',
 ]
+
+#markdownx form setting
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
