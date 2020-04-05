@@ -1,3 +1,13 @@
+/* font settings */
+body {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+p {
+  font-family: 'M PLUS 1p', sans-serif;
+}
 /* color settings */
 .bg-1 {
   background-color: #9dab86 !important;

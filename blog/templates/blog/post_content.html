@@ -11,9 +11,10 @@
 {% block content2 %}
   <h1>{{ post.title }}</h1>
   <p class="text-secondary">
-    投稿日時: {{ post.time }}
+    投稿日時: {{ post.published_time }}
   </p>
-  <p class="border-bottom pb-2 mt-n2">
+  <p class="border-bottom pb-2 mt-n2 text-secondary">
+    タグ:
     {% for tag in post.tags.all %}
     <button type="button" class="btn btn-sm btn-secondary rounded-pill">
       <a href="{% url 'blog:awt' tag.name %}" class="text-light">
