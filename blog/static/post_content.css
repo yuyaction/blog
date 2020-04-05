@@ -1,6 +1,7 @@
 /* margin settings */
 h3 {
   margin-top:5rem;
+  padding-top:2rem;
 }
 
 #tag+h3{
@@ -30,7 +31,7 @@ a[href*="#"]:hover {
     background: #e9ecef;
 }
 .box-title {
-    margin-top:1rem;
+    margin-top:2rem;
     font-size: 1.2em;
     background: #9dab86;
     padding: 4px;
