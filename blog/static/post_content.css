@@ -1,0 +1,41 @@
+/* margin settings */
+h3 {
+  margin-top:5rem;
+}
+
+#tag+h3{
+  margin-top:1rem;
+}
+
+
+/* TOC settings*/
+ul{
+  padding-left:2rem;
+}
+li{
+  line-height: 2;
+  list-style: none;
+}
+
+a[href*="#"] {
+	display: inline-block;
+	transition: .3s;
+	transform: scale(1);
+	color: #212529;
+}
+a[href*="#"]:hover {
+	transform: scale(1.05);
+}
+.toc {
+    background: #e9ecef;
+}
+.box-title {
+    margin-top:1rem;
+    font-size: 1.2em;
+    background: #9dab86;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
