@@ -40,3 +40,10 @@ a[href*="#"]:hover {
     font-weight: bold;
     letter-spacing: 0.05em;
 }
+
+/* contents settings*/
+h3,h4 {
+  display: inline-block;
+  color: #494949;/*文字色*/
+  border-bottom: dashed 2px #9dab86;;/*左線*/
+}
