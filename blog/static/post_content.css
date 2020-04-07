@@ -55,3 +55,9 @@ h3 {
   color: #494949;/*文字色*/
   border-bottom: dashed 2px #9dab86;;/*左線*/
 }
+
+/* media setting */
+img {
+  max-width: 100%;
+  height: auto;
+}

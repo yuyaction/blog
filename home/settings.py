@@ -131,7 +131,7 @@ STATICFILES_DIRS = (
 #media file settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#MARKDOWNX_IMAGE_MAX_SIZE = {'size': (2000, 2000), 'quality': 100}
+MARKDOWNX_IMAGE_MAX_SIZE = {'size': (1000, 1000), 'quality': 100}
 
 #marldownx
 MARKDOWNX_MARKDOWN_EXTENSIONS = [
