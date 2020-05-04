@@ -20,17 +20,8 @@
     <!-- custom fonts -->
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500;700&display=swap" rel="stylesheet">
     <!-- custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'map/home.css' %}">
     {% block custom_css %}{% endblock %}
-
-    <!-- MathJax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     
     <!-- For japanese fonts -->
     <link rel="stylesheet" href="https://unpkg.com/jpncss@latest/dist/bootstrap/jpn.min.css">
@@ -65,26 +56,11 @@
     </nav>
     
     {% block jumbotron %}{% endblock %}
-
     <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-4 order-md-2">
-        <div class = "col-12 sticky-top" style = "padding-top:3.5rem">
-        {% block content1 %}{% endblock %}
-        </div>
-      </div>
-      <div class="col-12 col-md-8 order-md-1" style = "padding-top:3.5rem" id="main-col">
-        {% block content2 %}{% endblock %}
-      </div>
-    </div>
-    <!--
-    <footer class="footer text-center fixed-bottom" id="sticky-footer">
-      <small> &copy; 2020 Yuyaction's Blog</small>
-    </footer>
-    -->
+      {% block mapmain %}{% endblock %}
     </div>
 
-    <!-- Optional JavaScript -->
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -92,4 +68,5 @@
 
   </body>
 </html>
+
 

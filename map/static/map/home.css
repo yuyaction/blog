@@ -1,0 +1,64 @@
+/* font settings */
+body {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+p {
+  font-family: 'M PLUS 1p', sans-serif;
+  line-height: 2.5;
+}
+
+/* color settings */
+.bg-1 {
+  background-color: #9dab86 !important;
+}
+
+.bg-2 {
+  background-color: #e6a157 !important;
+}
+
+.bg-3 {
+  background-color: #eb8242 !important;
+}
+
+.bg-4 {
+  background-color: #c9753d !important;
+}
+
+.btn-2 {
+  color: #212529;
+  background-color: #e6a157;
+  border-color: #e6a157;
+}
+
+.btn-3 {
+  color: #212529;
+  background-color: #eb8242;
+  border-color: #eb8242;
+}
+
+.btn-4 {
+  color: #212529;
+  background-color: #c9753d;
+  border-color: #c9753d;
+}
+
+html {
+  scroll-padding-top: 3.5rem; /* 固定ヘッダの高さ分 */
+}
+
+.container{
+  margin-top:2em;
+}
+
+p>code{
+    margin: 0 2px;
+    padding: 0 5px;
+    /*border: 1px solid #ddd;*/
+    background-color: #F0F0F0;
+    border-radius: 2px;
+    color: #444;
+}
+

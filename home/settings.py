@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'map.apps.MapConfig',
     #3rd-party apps
     'markdownx',
+    'leaflet',
     #default apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -139,7 +140,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MARKDOWNX_IMAGE_MAX_SIZE = {'size': (1000, 1000), 'quality': 100}
 
 #marldownx
-MARKDOWNX_MARKDOWN_EXTENSIONS = [
+MARKDOWNX_MARKDOWN_EXTENSIONS = [https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png
     'markdown.extensions.extra',  
     'markdown.extensions.toc',
     'markdown.extensions.tables',
@@ -147,3 +148,12 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
 
 #markdownx form setting
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
+
+#leaflet settings
+LEAFLET_CONFIG = {
+  'DEFAULT_CENTER': (34.987528,135.759323),
+  'DEFAULT_ZOOM': 5,
+  'MIN_ZOOM': 3,
+  'MAX_ZOOM': 18,
+  'TILES': 'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+}

@@ -1,8 +1,28 @@
-{% extends 'blog/base.html' %}
+{% extends 'map/base.html' %}
+{% load static %}
+{% load leaflet_tags %}
 
-{% block content2 %}
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'map/Mtmap.css' %}">
+{% endblock %}
+
+{% block additionalhead %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+{% endblock %}
+
+{% block mapmain%}
   <h1>{{ maps.name }}</h1>
   <h1> 投稿日時: {{ maps.date }}</h1>
-  <p> {{ maps.Mtposition }}</p>
- {% endblock %}
 
+<script type="text/javascript">
+    function map_init_basic (map, options) {
+        ...
+        L.marker([50.5, 30.5]).addTo(map);
+        ...
+    }
+</script>
+
+{% leaflet_map "yourmap" callback="window.map_init_basic" %}
+  <p> {{ maps.Mtposition }}</p>
+{% endblock %}
