@@ -140,7 +140,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MARKDOWNX_IMAGE_MAX_SIZE = {'size': (1000, 1000), 'quality': 100}
 
 #marldownx
-MARKDOWNX_MARKDOWN_EXTENSIONS = [https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.extra',  
     'markdown.extensions.toc',
     'markdown.extensions.tables',
@@ -155,5 +155,10 @@ LEAFLET_CONFIG = {
   'DEFAULT_ZOOM': 5,
   'MIN_ZOOM': 3,
   'MAX_ZOOM': 18,
-  'TILES': 'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+  'TILES':'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+}
+
+#Geojson settings
+SERIALIZATION_MODULES = {
+     "geojson": "django.contrib.gis.serializers.geojson",
 }

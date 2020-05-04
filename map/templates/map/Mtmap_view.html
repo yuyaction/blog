@@ -12,17 +12,8 @@
 {% endblock %}
 
 {% block mapmain%}
-  <h1>{{ maps.name }}</h1>
-  <h1> 投稿日時: {{ maps.date }}</h1>
+<h1>登った山</h1>
+  <script type="text/javascript" src="{% static 'map/map_init_basic.js' %}"></script>
+  {% leaflet_map "yourmap" callback="window.map_init_basic" %}   
 
-<script type="text/javascript">
-    function map_init_basic (map, options) {
-        ...
-        L.marker([50.5, 30.5]).addTo(map);
-        ...
-    }
-</script>
-
-{% leaflet_map "yourmap" callback="window.map_init_basic" %}
-  <p> {{ maps.Mtposition }}</p>
 {% endblock %}
