@@ -6,7 +6,7 @@ from django.core.serializers import serialize
 # Create your views here.
 
 def Mtmap_view(request):
-    context = {"maps":Mtmap.objects.get(pk=1)}
+    context = {}
     return render(request, 'map/Mtmap_view.html', context)
 
 def Mtpoints_view(request):
