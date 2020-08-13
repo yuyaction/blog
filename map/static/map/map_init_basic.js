@@ -21,7 +21,6 @@ function map_init_basic (map,options) {
           </div>`;
            
             var field = feature.properties.name+'<br>'+feature.properties.date;
-            console.log(html);
             layer.bindPopup(html).openPopup(field);
         }
     });

@@ -1,0 +1,20 @@
+{% extends 'map/base.html' %}
+{% load static %}
+{% load leaflet_tags %}
+
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'map/Mtmap.css' %}">
+{% endblock %}
+
+{% block additionalhead %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
+{% endblock %}
+
+{% block mapmain%}
+<h1>せんつなぎ! (built with reference to  <a href="https://www.kuccweb.com/">kuccweb</a>)</h1>
+  <script type="text/javascript" src="{% static 'map/road.js' %}"></script>
+  {% leaflet_map "yourmap" callback="window.road" %}   
+{% endblock %}
+

@@ -18,15 +18,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from map.views import Mtpoints_view
-
+from map.views import Mtpoints_view, Cycleroute_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('map/',include('map.urls')),
     path('', include('blog.urls')),
     path('markdownx/', include('markdownx.urls')),
-    path('data/points/',Mtpoints_view, name='points')
+    path('data/points/',Mtpoints_view, name='points'),
+    path('data/gpx/',Cycleroute_view , name='gpx'),
 ]
 
 if settings.DEBUG:

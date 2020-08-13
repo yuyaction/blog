@@ -10,4 +10,11 @@ class Mtmap(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+class GPXsave(models.Model):
+    name = models.CharField(max_length=50)
+    date = models.DateField('Bike ride date')
+    gpx_file = models.FileField(upload_to='gpx_files/')
+
+    def __str__(self):
+        return self.name
