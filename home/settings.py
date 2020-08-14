@@ -155,7 +155,10 @@ LEAFLET_CONFIG = {
   'DEFAULT_ZOOM': 5,
   'MIN_ZOOM': 3,
   'MAX_ZOOM': 18,
-  'TILES':'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+  'TILES':[('白地図','http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',{'attribution': "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"}),
+           ('国土地理院地図','https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',{'attribution': "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"}),
+           ('OpenStreetMap','https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{'attribution': "&copy; <a href='http://osm.org/copyright' target='_blank'>OpenStreetMap</a> contributors" }),
+          ]
 }
 
 #Geojson settings
