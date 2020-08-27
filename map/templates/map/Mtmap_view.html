@@ -9,11 +9,16 @@
 {% block additionalhead %}
   {% leaflet_js %}
   {% leaflet_css %}
-{% endblock %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous.min.js" integrity="sha512-m4kT2yNAKoSDZ6+orVQhqgrIMwAng5X/wBEiNeegedjIRhZRnlgyGzYqkzJ1HR1wn0aidznu8O4Yzz7bKTSrFQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous-basic.min.css" integrity="sha512-qvPeSLkXsYxwQBnNswZ6Fri9TbDR2wOKSXzBFnuSFlOGbWob7KY8qrHU6F4YukwN6FmcdDWR1jYCbgWjf3nVkQ==" crossorigin="anonymous" />
+ {% endblock %}
 
 {% block mapmain%}
 <h1>登った山</h1>
   <script type="text/javascript" src="{% static 'map/map_init_basic.js' %}"></script>
-  {% leaflet_map "yourmap" callback="window.map_init_basic" %}   
+  {% leaflet_map "yourmap" callback="window.map_init_basic" %}
 
 {% endblock %}
+{% block additionalend %}
+{% endblock %}
+

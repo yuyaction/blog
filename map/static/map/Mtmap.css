@@ -1,3 +1,6 @@
 .leaflet-container {  /* all maps */
   height: 800px;
 }
+.lum-lightbox {
+  z-index: 500000000;
+}
