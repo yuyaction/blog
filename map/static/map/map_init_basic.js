@@ -44,6 +44,16 @@ function map_init_basic (map,options) {
             new LuminousGallery(document.querySelectorAll('.luminous'));
             });
         }
+        , pointToLayer: function( feature, latlng ) {
+            var icn = L.icon({
+                iconUrl: '/media/yama.png', 
+                //iconRetinaUrl: 'sample2.png',
+                iconSize: [30, 30],
+                iconAnchor: [12, 25],
+                popupAnchor: [0, -25],
+            });
+            return L.marker( latlng, { icon: icn });
+          }
     });
     geojson.addTo(map);
 });
